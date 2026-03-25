@@ -162,12 +162,12 @@ document
         (observation.taxon?.name ?? "Unknown Species");
       const licenses = observation.photos.map((p) => p.license_code || "none");
 
-      const safePrefferredCommonName = observation.taxon?.preferred_common_name || "Unknown Common Name";
+      const safeCommonName = observation.taxon?.preferred_common_name || "Unknown Common Name";
       const safeSpeciesName = observation.taxon?.name || "Unknown Species";
-      console.log(prefferredCommonName);
+      console.log(safeCommonName);
       console.log(observation.user.login, observation.user.id);
       console.log(`Observation ID: ${observationId}`);
-      console.log(`Species: ${speciesName}`);
+      console.log(`Species: ${safeSpeciesName}`);
       console.log(`Licenses: ${licenses.join(", ")}`);
       console.log(`Number of photos: ${photoUrls.length}`);
 
