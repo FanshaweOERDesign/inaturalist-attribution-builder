@@ -162,7 +162,7 @@ document
         (observation.taxon?.name ?? "Unknown Species");
       const licenses = observation.photos.map((p) => p.license_code || "none");
 
-      const safeCommonName = observation.taxon?.preferred_common_name || "Unknown Common Name";
+      const safeCommonName = observation.taxon?.preferred_common_name || observation.taxon?.name || "Unidentified/Unknown Observation";
       
       console.log(safeCommonName);
       console.log(observation.user.login, observation.user.id);
