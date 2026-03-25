@@ -183,7 +183,7 @@ document
       console.log("Generated Attribution HTML:", attribution);
     } catch (err) {
       status.textContent =
-        "It seems we ran into an issue while processing your request. Please double-check the OpenStax URL you provided and try again in ~30 seconds - " +
+        "It seems we ran into an issue while processing your request. Please double-check the Observation ID you provided and try again in ~30 seconds - " +
         err.message;
     }
   });
