@@ -163,11 +163,11 @@ document
       const licenses = observation.photos.map((p) => p.license_code || "none");
 
       const safeCommonName = observation.taxon?.preferred_common_name || "Unknown Common Name";
-      const safeSpeciesName = observation.taxon?.name || "Unknown Species";
+      
       console.log(safeCommonName);
       console.log(observation.user.login, observation.user.id);
       console.log(`Observation ID: ${observationId}`);
-      console.log(`Species: ${safeSpeciesName}`);
+      console.log(`Species: ${species}`);
       console.log(`Licenses: ${licenses.join(", ")}`);
       console.log(`Number of photos: ${photoUrls.length}`);
 
@@ -175,7 +175,7 @@ document
         {id: observationId, 
           user: observation.user, 
           license: licenses[0], 
-          commonName: prefferredCommonName});
+          commonName: safeCommonName});
 
       status.textContent = `Complete! This observation has ${photoUrls.length} image(s).`;
       attributionField.value = attribution;
