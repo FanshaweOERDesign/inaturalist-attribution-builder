@@ -24,8 +24,8 @@
                     <div class="col-12 col-lg-8">
                         <form id="observationForm" style="display: inline;">
                             <label class="fw-bold" for="observationId">Observation ID:</label>
-                            <input class="p-2 border-light" type="number" id="observationId" name="observationId" required placeholder="eg. 123456789" maxlength="20">
-                            <button class="border-light" type="submit">Generate Attribution</button>
+                            <input class="p-2 border-light" type="text" id="observationId" name="observationId" required placeholder="Paste Link/ID 123456789" maxlength="100" oninput="stripNonNumeric(this)">
+                            <button class="fw-bold border-light" type="submit">Generate Attribution</button>
                         </form>
                     </div>
                     <div class="col-12 d-none" id="status" style="margin-top:1em;color:#fff;"></div>

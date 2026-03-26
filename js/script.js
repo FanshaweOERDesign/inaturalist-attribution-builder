@@ -1,6 +1,7 @@
 let photoUrls = [];
 let observationId = null;
 
+// Capitalize the first letter of each word in a string
 Object.defineProperty(String.prototype, 'capitalize', {
   value: function() {
     return this.replace(/\b\w/g, function(char) {
@@ -10,6 +11,17 @@ Object.defineProperty(String.prototype, 'capitalize', {
   enumerable: false
 });
 
+// Remove all non-numeric characters from an input field
+function stripNonNumeric(inputElement) {
+    // Strip exponent characters first to avoid browser number-input quirks,
+    // then remove anything that is not a digit.
+    inputElement.value = inputElement.value
+      .replace(/[eE]/g, '')
+      .replace(/[^0-9]/g, '');
+}
+
+
+// Get the file extension from a URL, or return an empty string if not found
 function getExtensionFromUrl(url) {
   try {
     const pathname = new URL(url).pathname;
